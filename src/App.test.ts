@@ -1,4 +1,4 @@
-import {getBanknoteList, getSum, getTriangleType, isEvenIndexSumGreater, getSquarePositiveIntegers, sum, sumFirstNumbers} from "../App";
+import {getBanknoteList, getSum, getTriangleType, isEvenIndexSumGreater, getSquarePositiveIntegers, sum, sumFirstNumbers} from "./App";
 
 test("sum", () => {
     expect(sum(3, 5, 7, 6, 4, 9)).toBe(34)

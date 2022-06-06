@@ -2,10 +2,11 @@
 // числа (неопределённое кол-во) и возвращает их сумму (rest).
 
 export function sum(...nums: Array<number>): number {
-    // console.log(nums)
-    //...здесь пишем код.
-    // В return стоит "заглушка", чтоб typescript не ругался
-    return 123
+    let count = nums.reduce((acc, item) => {
+        return acc + item
+    }, 0)
+
+    return count
 }
 
 
@@ -17,10 +18,21 @@ export function sum(...nums: Array<number>): number {
 //  - "11", если треугольник обычный,
 //  - "00", если такого треугольника не существует.
 
-export function getTriangleType(a: number,b: number,c: number): string {
-    //...здесь пишем код.
-    // В return стоит "заглушка", чтоб typescript не ругался
-    return ""
+export function getTriangleType(a: number, b: number, c: number): string {
+    if (a + b > c && a + c > b && b + c > a) {
+        if (a === b && b === c && a === c) {
+            return '10'
+        } else {
+            if( a === b || b === c || a === c) {
+                return '01'
+            } else {
+                return '11'
+            }
+        }
+    } else {
+        return '00'
+    }
+    
 }
 
 
