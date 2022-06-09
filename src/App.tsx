@@ -1,12 +1,15 @@
+import React from 'react';
+
 // 1. Функция sum принимает параметром целые положительные
 // числа (неопределённое кол-во) и возвращает их сумму (rest).
 
 export function sum(...nums: Array<number>): number {
-    let count = nums.reduce((acc, item) => {
-        return acc + item
-    }, 0)
+  console.log(nums)
+  let count = nums.reduce((acc, item) => {
+      return acc + item
+  }, 0)
 
-    return count
+  return count
 }
 
 // 2. Функция getTriangleType принимает три параметра:
@@ -18,19 +21,19 @@ export function sum(...nums: Array<number>): number {
 //  - "00", если такого треугольника не существует.
 
 export function getTriangleType(a: number, b: number, c: number): string {
-    if (a + b > c && a + c > b && b + c > a) {
-        if (a === b && b === c && a === c) {
-            return '10'
-        } else {
-            if( a === b || b === c || a === c) {
-                return '01'
-            } else {
-                return '11'
-            }
-        }
-    } else {
-        return '00'
-    }
+  if (a + b > c && a + c > b && b + c > a) {
+      if (a === b && b === c && a === c) {
+          return '10'
+      } else {
+          if( a === b || b === c || a === c) {
+              return '01'
+          } else {
+              return '11'
+          }
+      }
+  } else {
+      return '00'
+  }
 }
 
 
@@ -82,7 +85,6 @@ export function sumFirstNumbers(N: number): number {
     }
 }
 
-
 // Д.З.:
 // 7. Функция-банкомат принимает параметром целое натуральное число (сумму).
 // Возвращает массив с наименьшим количеством купюр, которыми можно выдать эту
@@ -106,3 +108,15 @@ export function getBanknoteList(amountOfMoney: number): Array<number> {
     
     return result;
 }
+
+
+class App extends React.Component {
+    componentDidMount() {
+        console.log(sum(1,2,5,6))
+    }
+    render() {
+        return <div></div>
+    }
+  }
+
+export default App;
